@@ -203,13 +203,13 @@ $help-size: $size-small !default;
 
   &:not(.is-multiple) {
     height: 2.25em;
+  }
 
+  &:not(.is-multiple):not(.is-loading) {
     &::after {
       @include arrow($input-arrow);
 
-      margin-top: -0.375em;
       right: 1.125em;
-      top: 50%;
       z-index: 4;
     }
   }
@@ -253,7 +253,7 @@ $help-size: $size-small !default;
   }
 
   // States
-  &:hover {
+  &:not(.is-multiple):not(.is-loading):hover {
     &::after {
       border-color: $input-hover-color;
     }
@@ -263,14 +263,25 @@ $help-size: $size-small !default;
   @each $name, $pair in $colors {
     $color: nth($pair, 1);
 
-    &.is-#{$name} select {
-      border-color: $color;
+    &.is-#{$name} {
+      &:not(:hover)::after {
+        border-color: $color;
+      }
 
-      &:focus,
-      &.is-focused,
-      &:active,
-      &.is-active {
-        box-shadow: $input-focus-box-shadow-size rgba($color, 0.25);
+      select {
+        border-color: $color;
+
+        &:hover,
+        &.is-hovered {
+          border-color: darken($color, 5%);
+        }
+
+        &:focus,
+        &.is-focused,
+        &:active,
+        &.is-active {
+          box-shadow: $input-focus-box-shadow-size rgba($color, 0.25);
+        }
       }
     }
   }

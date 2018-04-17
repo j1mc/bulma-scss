@@ -100,11 +100,11 @@ $column-gap: 0.75rem !default;
   @for $i from 1 through 12 {
     .columns.is-mobile > &.is-#{$i} {
       flex: none;
-      width: $i / 12 * 100%;
+      width: percentage($i / 12);
     }
 
     .columns.is-mobile > &.is-offset-#{$i} {
-      margin-left: $i / 12 * 100%;
+      margin-left: percentage($i / 12);
     }
   }
 
@@ -202,11 +202,11 @@ $column-gap: 0.75rem !default;
     @for $i from 1 through 12 {
       &.is-#{$i}-mobile {
         flex: none;
-        width: $i / 12 * 100%;
+        width: percentage($i / 12);
       }
 
       &.is-offset-#{$i}-mobile {
-        margin-left: $i / 12 * 100%;
+        margin-left: percentage($i / 12);
       }
     }
   }
@@ -327,12 +327,12 @@ $column-gap: 0.75rem !default;
       &.is-#{$i},
       &.is-#{$i}-tablet {
         flex: none;
-        width: $i / 12 * 100%;
+        width: percentage($i / 12);
       }
 
       &.is-offset-#{$i},
       &.is-offset-#{$i}-tablet {
-        margin-left: $i / 12 * 100%;
+        margin-left: percentage($i / 12);
       }
     }
   }
@@ -432,11 +432,11 @@ $column-gap: 0.75rem !default;
     @for $i from 1 through 12 {
       &.is-#{$i}-touch {
         flex: none;
-        width: $i / 12 * 100%;
+        width: percentage($i / 12);
       }
 
       &.is-offset-#{$i}-touch {
-        margin-left: $i / 12 * 100%;
+        margin-left: percentage($i / 12);
       }
     }
   }
@@ -536,11 +536,11 @@ $column-gap: 0.75rem !default;
     @for $i from 1 through 12 {
       &.is-#{$i}-desktop {
         flex: none;
-        width: $i / 12 * 100%;
+        width: percentage($i / 12);
       }
 
       &.is-offset-#{$i}-desktop {
-        margin-left: $i / 12 * 100%;
+        margin-left: percentage($i / 12);
       }
     }
   }
@@ -640,11 +640,11 @@ $column-gap: 0.75rem !default;
     @for $i from 1 through 12 {
       &.is-#{$i}-widescreen {
         flex: none;
-        width: $i / 12 * 100%;
+        width: percentage($i / 12);
       }
 
       &.is-offset-#{$i}-widescreen {
-        margin-left: $i / 12 * 100%;
+        margin-left: percentage($i / 12);
       }
     }
   }
@@ -744,11 +744,11 @@ $column-gap: 0.75rem !default;
     @for $i from 1 through 12 {
       &.is-#{$i}-fullhd {
         flex: none;
-        width: $i / 12 * 100%;
+        width: percentage($i / 12);
       }
 
       &.is-offset-#{$i}-fullhd {
-        margin-left: $i / 12 * 100%;
+        margin-left: percentage($i / 12);
       }
     }
   }

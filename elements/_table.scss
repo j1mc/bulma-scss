@@ -20,9 +20,10 @@ $table-striped-row-even-background-color: $white-bis !default;
 $table-striped-row-even-hover-background-color: $white-ter !default;
 
 .table {
+  @include block;
+
   background-color: $table-background-color;
   color: $table-color;
-  margin-bottom: 1.5rem;
 
   td,
   th {
@@ -167,4 +168,13 @@ $table-striped-row-even-hover-background-color: $white-ter !default;
       }
     }
   }
+}
+
+.table-container {
+  @include block;
+  @include overflow-touch;
+
+  overflow: auto;
+  overflow-y: hidden;
+  max-width: 100%;
 }

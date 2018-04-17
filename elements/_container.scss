@@ -2,7 +2,7 @@
   margin: 0 auto;
   position: relative;
 
-  @include from($desktop) {
+  @include desktop {
     max-width: $desktop - 2 * $gap;
     width: $desktop - 2 * $gap;
 
@@ -15,7 +15,7 @@
   }
 
 
-  @include until($widescreen) {
+  @include until-widescreen {
     &.is-widescreen {
       max-width: $widescreen - 2 * $gap;
       width: auto;
@@ -23,7 +23,7 @@
   }
 
 
-  @include until($fullhd) {
+  @include until-fullhd {
     &.is-fullhd {
       max-width: $fullhd - 2 * $gap;
       width: auto;
@@ -31,13 +31,13 @@
   }
 
 
-  @include from($widescreen) {
+  @include widescreen {
     max-width: $widescreen - 2 * $gap;
     width: $widescreen - 2 * $gap;
   }
 
 
-  @include from($fullhd) {
+  @include fullhd {
     max-width: $fullhd - 2 * $gap;
     width: $fullhd - 2 * $gap;
   }

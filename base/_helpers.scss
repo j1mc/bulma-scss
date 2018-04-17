@@ -74,7 +74,9 @@ $alignments: ("centered": "center", "justified": "justify", "left": "left", "rig
   .has-text-#{$alignment} {
     text-align: #{$text-align} !important;
   }
+}
 
+@each $alignment, $text-align in $alignments {
   @include mobile {
     .has-text-#{$alignment}-mobile {
       text-align: #{$text-align} !important;
@@ -167,11 +169,19 @@ $alignments: ("centered": "center", "justified": "justify", "left": "left", "rig
       color: darken($color, 10%) !important;
     }
   }
+
+  .has-background-#{$name} {
+    background-color: $color !important;
+  }
 }
 
 @each $name, $shade in $shades {
   .has-text-#{$name} {
     color: $shade !important;
+  }
+
+  .has-background-#{$name} {
+    background-color: $shade !important;
   }
 }
 
