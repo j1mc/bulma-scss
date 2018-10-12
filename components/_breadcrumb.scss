@@ -8,8 +8,9 @@ $breadcrumb-item-padding-horizontal: 0.75em !default;
 $breadcrumb-item-separator-color: $grey-light !default;
 
 .breadcrumb {
-  @include block;
-  @include unselectable;
+  @extend %block;
+
+  @extend %unselectable;
 
   font-size: $size-normal;
   white-space: nowrap;

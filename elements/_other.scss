@@ -1,9 +1,9 @@
 .block {
-  @include block;
+  @extend %block;
 }
 
 .delete {
-  @include delete;
+  @extend %delete;
 }
 
 .heading {
@@ -15,7 +15,7 @@
 }
 
 .highlight {
-  @include block;
+  @extend %block;
 
   font-weight: $weight-normal;
   max-width: 100%;
@@ -29,7 +29,7 @@
 }
 
 .loader {
-  @include loader;
+  @extend %loader;
 }
 
 .number {

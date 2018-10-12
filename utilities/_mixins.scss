@@ -193,7 +193,7 @@
 
 // Placeholders
 
-%unselectable {
+@mixin unselectable {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -201,12 +201,12 @@
   user-select: none;
 }
 
-@mixin unselectable {
-  @extend %unselectable;
+%unselectable {
+  @include unselectable;
 }
 
-%arrow {
-  border: 3px solid transparent;
+@mixin arrow($color: transparent) {
+  border: 3px solid $color;
   border-radius: 2px;
   border-right: 0;
   border-top: 0;
@@ -222,23 +222,21 @@
   width: 0.625em;
 }
 
-@mixin arrow($color) {
-  @extend %arrow;
-
-  border-color: $color;
+%arrow {
+  @include arrow;
 }
 
-%block {
+@mixin block {
   &:not(:last-child) {
     margin-bottom: 1.5rem;
   }
 }
 
-@mixin block {
-  @extend %block;
+%block {
+  @include block;
 }
 
-%delete {
+@mixin delete {
   @extend %unselectable;
 
   -moz-appearance: none;
@@ -247,6 +245,7 @@
   border: none;
   border-radius: $radius-rounded;
   cursor: pointer;
+  pointer-events: auto;
   display: inline-block;
   flex-grow: 0;
   flex-shrink: 0;
@@ -321,13 +320,13 @@
   }
 }
 
-@mixin delete {
-  @extend %delete;
+%delete {
+  @include delete;
 }
 
-%loader {
+@mixin loader {
   animation: spinAround 500ms infinite linear;
-  border: 2px solid $border;
+  border: 2px solid $grey-lighter;
   border-radius: $radius-rounded;
   border-right-color: transparent;
   border-top-color: transparent;
@@ -338,25 +337,18 @@
   width: 1em;
 }
 
-@mixin loader {
-  @extend %loader;
-}
-
-%overlay {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
+%loader {
+  @include loader;
 }
 
 @mixin overlay($offset: 0) {
-  @extend %overlay;
+  bottom: $offset;
+  left: $offset;
+  position: absolute;
+  right: $offset;
+  top: $offset;
+}
 
-  @if $offset != 0 {
-    bottom: $offset;
-    left: $offset;
-    right: $offset;
-    top: $offset;
-  }
+%overlay {
+  @include overlay;
 }

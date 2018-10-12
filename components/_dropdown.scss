@@ -69,9 +69,12 @@ $dropdown-divider-background-color: $border !default;
   position: relative;
 }
 
-a.dropdown-item {
+a.dropdown-item,
+button.dropdown-item {
   padding-right: 3rem;
+  text-align: left;
   white-space: nowrap;
+  width: 100%;
 
   &:hover {
     background-color: $dropdown-item-hover-background-color;

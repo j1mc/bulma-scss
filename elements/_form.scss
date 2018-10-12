@@ -1,6 +1,7 @@
 $input-color: $grey-darker !default;
 $input-background-color: $white !default;
 $input-border-color: $grey-lighter !default;
+$input-height: $control-height !default;
 $input-shadow: inset 0 1px 2px rgba($black, 0.1) !default;
 
 $input-hover-color: $grey-darker !default;
@@ -41,7 +42,7 @@ $label-weight: $weight-bold !default;
 $help-size: $size-small !default;
 
 @mixin input {
-  @include control;
+  @extend %control;
 
   background-color: $input-background-color;
   border-color: $input-border-color;
@@ -202,13 +203,14 @@ $help-size: $size-small !default;
   vertical-align: top;
 
   &:not(.is-multiple) {
-    height: 2.25em;
+    height: $input-height;
   }
 
   &:not(.is-multiple):not(.is-loading) {
     &::after {
-      @include arrow($input-arrow);
+      @extend %arrow;
 
+      border-color: $input-arrow;
       right: 1.125em;
       z-index: 4;
     }
@@ -243,7 +245,7 @@ $help-size: $size-small !default;
     }
 
     &[multiple] {
-      height: initial;
+      height: auto;
       padding: 0;
 
       option {
@@ -316,7 +318,7 @@ $help-size: $size-small !default;
 
   &.is-loading {
     &::after {
-      @include loader;
+      @extend %loader;
 
       margin-top: 0;
       position: absolute;
@@ -340,7 +342,7 @@ $help-size: $size-small !default;
 }
 
 .file {
-  @include unselectable;
+  @extend %unselectable;
 
   align-items: stretch;
   display: flex;
@@ -552,17 +554,18 @@ $help-size: $size-small !default;
 }
 
 .file-input {
-  height: 0.01em;
+  height: 100%;
   left: 0;
+  opacity: 0;
   outline: none;
   position: absolute;
   top: 0;
-  width: 0.01em;
+  width: 100%;
 }
 
 .file-cta,
 .file-name {
-  @include control;
+  @extend %control;
 
   border-color: $file-border-color;
   border-radius: $file-radius;
@@ -685,19 +688,21 @@ $help-size: $size-small !default;
       .button,
       .input,
       .select select {
-        &:hover,
-        &.is-hovered {
-          z-index: 2;
-        }
+        &:not([disabled]) {
+          &:hover,
+          &.is-hovered {
+            z-index: 2;
+          }
 
-        &:focus,
-        &.is-focused,
-        &:active,
-        &.is-active {
-          z-index: 3;
+          &:focus,
+          &.is-focused,
+          &:active,
+          &.is-active {
+            z-index: 3;
 
-          &:hover {
-            z-index: 4;
+            &:hover {
+              z-index: 4;
+            }
           }
         }
       }
@@ -844,6 +849,7 @@ $help-size: $size-small !default;
 }
 
 .control {
+  clear: both;
   font-size: $size-normal;
   position: relative;
   text-align: left;
@@ -853,11 +859,11 @@ $help-size: $size-small !default;
   &.has-icon {
     .icon {
       color: $input-icon-color;
-      height: 2.25em;
+      height: $input-height;
       pointer-events: none;
       position: absolute;
       top: 0;
-      width: 2.25em;
+      width: $input-height;
       z-index: 4;
     }
 
@@ -893,7 +899,7 @@ $help-size: $size-small !default;
       }
 
       .input {
-        padding-left: 2.25em;
+        padding-left: $input-height;
       }
     }
 
@@ -903,7 +909,7 @@ $help-size: $size-small !default;
       }
 
       .input {
-        padding-right: 2.25em;
+        padding-right: $input-height;
       }
     }
   }
@@ -933,11 +939,11 @@ $help-size: $size-small !default;
 
     .icon {
       color: $input-icon-color;
-      height: 2.25em;
+      height: $input-height;
       pointer-events: none;
       position: absolute;
       top: 0;
-      width: 2.25em;
+      width: $input-height;
       z-index: 4;
     }
   }
@@ -945,7 +951,7 @@ $help-size: $size-small !default;
   &.has-icons-left {
     .input,
     .select select {
-      padding-left: 2.25em;
+      padding-left: $input-height;
     }
 
     .icon.is-left {
@@ -956,7 +962,7 @@ $help-size: $size-small !default;
   &.has-icons-right {
     .input,
     .select select {
-      padding-right: 2.25em;
+      padding-right: $input-height;
     }
 
     .icon.is-right {
@@ -966,7 +972,7 @@ $help-size: $size-small !default;
 
   &.is-loading {
     &::after {
-      @include loader;
+      @extend %loader;
 
       position: absolute !important;
       right: 0.625em;

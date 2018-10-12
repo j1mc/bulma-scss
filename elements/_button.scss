@@ -46,8 +46,9 @@ $button-static-border-color: $grey-lighter !default;
 }
 
 .button {
-  @include control;
-  @include unselectable;
+  @extend %control;
+
+  @extend %unselectable;
 
   background-color: $button-background-color;
   border-color: $button-border-color;
@@ -281,7 +282,8 @@ $button-static-border-color: $grey-lighter !default;
     pointer-events: none;
 
     &::after {
-      @include loader;
+      @extend %loader;
+
       @include center(1em);
 
       position: absolute !important;
@@ -312,7 +314,7 @@ $button-static-border-color: $grey-lighter !default;
   .button {
     margin-bottom: 0.5rem;
 
-    &:not(:last-child) {
+    &:not(:last-child):not(.is-fullwidth) {
       margin-right: 0.5rem;
     }
   }

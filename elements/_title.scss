@@ -17,7 +17,7 @@ $subtitle-negative-margin: -1.25rem !default;
 
 .title,
 .subtitle {
-  @include block;
+  @extend %block;
 
   word-break: break-word;
 

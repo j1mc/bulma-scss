@@ -834,6 +834,68 @@ $column-gap: 0.75rem !default;
       &.is-#{$i} {
         --columnGap: #{$i * 0.25rem};
       }
+
+      @include mobile {
+        &.is-#{$i}-mobile {
+          --columnGap: #{$i * 0.25rem};
+        }
+      }
+
+
+      @include tablet {
+        &.is-#{$i}-tablet {
+          --columnGap: #{$i * 0.25rem};
+        }
+      }
+
+
+      @include tablet-only {
+        &.is-#{$i}-tablet-only {
+          --columnGap: #{$i * 0.25rem};
+        }
+      }
+
+
+      @include touch {
+        &.is-#{$i}-touch {
+          --columnGap: #{$i * 0.25rem};
+        }
+      }
+
+
+      @include desktop {
+        &.is-#{$i}-desktop {
+          --columnGap: #{$i * 0.25rem};
+        }
+      }
+
+
+      @include desktop-only {
+        &.is-#{$i}-desktop-only {
+          --columnGap: #{$i * 0.25rem};
+        }
+      }
+
+
+      @include widescreen {
+        &.is-#{$i}-widescreen {
+          --columnGap: #{$i * 0.25rem};
+        }
+      }
+
+
+      @include widescreen-only {
+        &.is-#{$i}-widescreen-only {
+          --columnGap: #{$i * 0.25rem};
+        }
+      }
+
+
+      @include fullhd {
+        &.is-#{$i}-fullhd {
+          --columnGap: #{$i * 0.25rem};
+        }
+      }
     }
   }
 }

@@ -18,7 +18,7 @@ $content-table-foot-cell-border-width: 2px 0 0 !default;
 $content-table-foot-cell-color: $text-strong !default;
 
 .content {
-  @include block;
+  @extend %block;
 
   // Inline
   li + li {
@@ -98,9 +98,29 @@ $content-table-foot-cell-color: $text-strong !default;
   }
 
   ol {
-    list-style: decimal outside;
+    list-style-position: outside;
     margin-left: 2em;
     margin-top: 1em;
+
+    &:not([type]) {
+      list-style-type: decimal;
+
+      &.is-lower-alpha {
+        list-style-type: lower-alpha;
+      }
+
+      &.is-lower-roman {
+        list-style-type: lower-roman;
+      }
+
+      &.is-upper-alpha {
+        list-style-type: upper-alpha;
+      }
+
+      &.is-upper-roman {
+        list-style-type: upper-roman;
+      }
+    }
   }
 
   ul {

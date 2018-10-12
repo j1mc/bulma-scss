@@ -158,7 +158,8 @@
   }
 
   &.is-halfheight,
-  &.is-fullheight {
+  &.is-fullheight,
+  &.is-fullheight-with-navbar {
     .hero-body {
       align-items: center;
       display: flex;
@@ -177,12 +178,16 @@
   &.is-fullheight {
     min-height: 100vh;
   }
+
+  &.is-fullheight-with-navbar {
+    min-height: calc(100vh - #{$navbar-height});
+  }
 }
 
 // Components
 
 .hero-video {
-  @include overlay;
+  @extend %overlay;
 
   overflow: hidden;
 

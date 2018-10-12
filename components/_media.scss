@@ -62,3 +62,9 @@
   flex-shrink: 1;
   text-align: left;
 }
+
+@include mobile {
+  .media-content {
+    overflow-x: auto;
+  }
+}

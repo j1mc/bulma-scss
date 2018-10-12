@@ -14,6 +14,8 @@ $navbar-item-active-color: $black !default;
 $navbar-item-active-background-color: transparent !default;
 $navbar-item-img-max-height: 1.75rem !default;
 
+$navbar-burger-color: $navbar-item-color !default;
+
 $navbar-tab-hover-background-color: transparent !default;
 $navbar-tab-hover-border-bottom-color: $link !default;
 $navbar-tab-active-color: $link !default;
@@ -41,6 +43,8 @@ $navbar-divider-background-color: $background !default;
 $navbar-divider-height: 2px !default;
 
 $navbar-bottom-box-shadow-size: 0 -2px 0 0 !default;
+
+$navbar-breakpoint: $desktop !default;
 
 @mixin navbar-fixed {
   left: 0;
@@ -85,7 +89,11 @@ $navbar-bottom-box-shadow-size: 0 -2px 0 0 !default;
         }
       }
 
-      @include desktop {
+      .navbar-burger {
+        color: $color-invert;
+      }
+
+      @include from($navbar-breakpoint) {
         .navbar-start,
         .navbar-end {
           & > .navbar-item,
@@ -192,6 +200,8 @@ body {
 }
 
 .navbar-burger {
+  color: $navbar-burger-color;
+
   @include hamburger($navbar-height);
 
   margin-left: auto;
@@ -272,12 +282,13 @@ a.navbar-item,
   flex-shrink: 1;
 }
 
-.navbar-link {
+.navbar-link:not(.is-arrowless) {
   padding-right: 2.5em;
 
   &::after {
-    @include arrow($navbar-dropdown-arrow);
+    @extend %arrow;
 
+    border-color: $navbar-dropdown-arrow;
     margin-top: -0.375em;
     right: 1.125em;
   }
@@ -302,7 +313,7 @@ a.navbar-item,
   margin: 0.5rem 0;
 }
 
-@include touch {
+@include until($navbar-breakpoint) {
   .navbar > .container {
     display: block;
   }
@@ -374,7 +385,7 @@ a.navbar-item,
 }
 
 
-@include desktop {
+@include from($navbar-breakpoint) {
   .navbar,
   .navbar-menu,
   .navbar-start,
@@ -556,11 +567,11 @@ a.navbar-item,
   .navbar > .container,
   .container > .navbar {
     .navbar-brand {
-      margin-left: -1rem;
+      margin-left: -0.75rem;
     }
 
     .navbar-menu {
-      margin-right: -1rem;
+      margin-right: -0.75rem;
     }
   }
 
