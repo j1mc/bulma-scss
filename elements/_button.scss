@@ -37,6 +37,10 @@ $button-static-border-color: $grey-lighter !default;
   font-size: $size-small;
 }
 
+@mixin button-normal {
+  font-size: $size-normal;
+}
+
 @mixin button-medium {
   font-size: $size-medium;
 }
@@ -136,7 +140,8 @@ $button-static-border-color: $grey-lighter !default;
       color: $button-text-hover-color;
     }
 
-    &[disabled] {
+    &[disabled],
+    fieldset[disabled] & {
       background-color: transparent;
       border-color: transparent;
       box-shadow: none;
@@ -176,7 +181,8 @@ $button-static-border-color: $grey-lighter !default;
         color: $color-invert;
       }
 
-      &[disabled] {
+      &[disabled],
+      fieldset[disabled] & {
         background-color: $color;
         border-color: transparent;
         box-shadow: none;
@@ -190,7 +196,8 @@ $button-static-border-color: $grey-lighter !default;
           background-color: darken($color-invert, 5%);
         }
 
-        &[disabled] {
+        &[disabled],
+        fieldset[disabled] & {
           background-color: $color-invert;
           border-color: transparent;
           box-shadow: none;
@@ -222,7 +229,8 @@ $button-static-border-color: $grey-lighter !default;
           }
         }
 
-        &[disabled] {
+        &[disabled],
+        fieldset[disabled] & {
           background-color: transparent;
           border-color: $color;
           box-shadow: none;
@@ -241,7 +249,8 @@ $button-static-border-color: $grey-lighter !default;
           color: $color;
         }
 
-        &[disabled] {
+        &[disabled],
+        fieldset[disabled] & {
           background-color: transparent;
           border-color: $color-invert;
           box-shadow: none;
@@ -256,6 +265,10 @@ $button-static-border-color: $grey-lighter !default;
     @include button-small;
   }
 
+  &.is-normal {
+    @include button-normal;
+  }
+
   &.is-medium {
     @include button-medium;
   }
@@ -265,7 +278,8 @@ $button-static-border-color: $grey-lighter !default;
   }
 
   // Modifiers
-  &[disabled] {
+  &[disabled],
+  fieldset[disabled] & {
     background-color: $button-disabled-background-color;
     border-color: $button-disabled-border-color;
     box-shadow: $button-disabled-shadow;
@@ -325,6 +339,25 @@ $button-static-border-color: $grey-lighter !default;
 
   &:not(:last-child) {
     margin-bottom: 1rem;
+  }
+
+  // Sizes
+  &.are-small {
+    .button:not(.is-normal):not(.is-medium):not(.is-large) {
+      @include button-small;
+    }
+  }
+
+  &.are-medium {
+    .button:not(.is-small):not(.is-normal):not(.is-large) {
+      @include button-medium;
+    }
+  }
+
+  &.are-large {
+    .button:not(.is-small):not(.is-normal):not(.is-medium) {
+      @include button-large;
+    }
   }
 
   &.has-addons {

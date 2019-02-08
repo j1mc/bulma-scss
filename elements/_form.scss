@@ -3,6 +3,7 @@ $input-background-color: $white !default;
 $input-border-color: $grey-lighter !default;
 $input-height: $control-height !default;
 $input-shadow: inset 0 1px 2px rgba($black, 0.1) !default;
+$input-placeholder-color: rgba($input-color, 0.3) !default;
 
 $input-hover-color: $grey-darker !default;
 $input-hover-border-color: $grey-light !default;
@@ -15,6 +16,7 @@ $input-focus-box-shadow-color: rgba($link, 0.25) !default;
 $input-disabled-color: $text-light !default;
 $input-disabled-background-color: $background !default;
 $input-disabled-border-color: $background !default;
+$input-disabled-placeholder-color: rgba($input-disabled-color, 0.3) !default;
 
 $input-arrow: $link !default;
 
@@ -49,7 +51,7 @@ $help-size: $size-small !default;
   color: $input-color;
 
   @include placeholder {
-    color: rgba($input-color, 0.3);
+    color: $input-placeholder-color;
   }
 
 
@@ -66,14 +68,15 @@ $help-size: $size-small !default;
     box-shadow: $input-focus-box-shadow-size $input-focus-box-shadow-color;
   }
 
-  &[disabled] {
+  &[disabled],
+  fieldset[disabled] & {
     background-color: $input-disabled-background-color;
     border-color: $input-disabled-border-color;
     box-shadow: none;
     color: $input-disabled-color;
 
     @include placeholder {
-      color: rgba($input-disabled-color, 0.3);
+      color: $input-disabled-placeholder-color;
     }
   }
 }
@@ -184,7 +187,8 @@ $help-size: $size-small !default;
     color: $input-hover-color;
   }
 
-  &[disabled] {
+  &[disabled],
+  fieldset[disabled] & {
     color: $input-disabled-color;
     cursor: not-allowed;
   }
@@ -236,7 +240,8 @@ $help-size: $size-small !default;
       display: none;
     }
 
-    &[disabled]:hover {
+    &[disabled]:hover,
+    fieldset[disabled] &:hover {
       border-color: $input-disabled-border-color;
     }
 
@@ -667,7 +672,7 @@ $help-size: $size-small !default;
         }
       }
 
-      &:first-child {
+      &:first-child:not(:only-child) {
         .button,
         .input,
         .select select {
@@ -676,7 +681,7 @@ $help-size: $size-small !default;
         }
       }
 
-      &:last-child {
+      &:last-child:not(:only-child) {
         .button,
         .input,
         .select select {
@@ -849,71 +854,13 @@ $help-size: $size-small !default;
 }
 
 .control {
+  box-sizing: border-box;
   clear: both;
   font-size: $size-normal;
   position: relative;
   text-align: left;
 
   // Modifiers
-  // DEPRECATED
-  &.has-icon {
-    .icon {
-      color: $input-icon-color;
-      height: $input-height;
-      pointer-events: none;
-      position: absolute;
-      top: 0;
-      width: $input-height;
-      z-index: 4;
-    }
-
-    .input {
-      &:focus {
-        & + .icon {
-          color: $input-icon-active-color;
-        }
-      }
-
-      &.is-small {
-        & + .icon {
-          font-size: $size-small;
-        }
-      }
-
-      &.is-medium {
-        & + .icon {
-          font-size: $size-medium;
-        }
-      }
-
-      &.is-large {
-        & + .icon {
-          font-size: $size-large;
-        }
-      }
-    }
-
-    &:not(.has-icon-right) {
-      .icon {
-        left: 0;
-      }
-
-      .input {
-        padding-left: $input-height;
-      }
-    }
-
-    &.has-icon-right {
-      .icon {
-        right: 0;
-      }
-
-      .input {
-        padding-right: $input-height;
-      }
-    }
-  }
-
   &.has-icons-left,
   &.has-icons-right {
     .input,
