@@ -36,7 +36,8 @@ $control-padding-horizontal: calc(0.625em - #{$control-border-width}) !default;
     outline: none;
   }
 
-  &[disabled] {
+  &[disabled],
+  fieldset[disabled] & {
     cursor: not-allowed;
   }
 }

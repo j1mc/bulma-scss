@@ -29,7 +29,7 @@ $message-header-body-border-width: 0 !default;
     color: currentColor;
   }
 
-  a:not(.button):not(.tag) {
+  a:not(.button):not(.tag):not(.dropdown-item) {
     color: currentColor;
     text-decoration: underline;
   }

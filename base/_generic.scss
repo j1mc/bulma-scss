@@ -120,6 +120,10 @@ strong {
 
 // Block
 
+fieldset {
+  border: none;
+}
+
 pre {
   @include overflow-touch;
 

@@ -635,3 +635,12 @@ a.navbar-item,
     }
   }
 }
+
+
+// Combination
+
+.hero {
+  &.is-fullheight-with-navbar {
+    min-height: calc(100vh - #{$navbar-height});
+  }
+}
