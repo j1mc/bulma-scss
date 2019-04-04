@@ -13,3 +13,9 @@ Install with Yarn
 ```
 yarn add https://github.com/j1mc/bulma-scss
 ```
+
+Install with npm
+```
+npm install bulma-scss
+```
+
