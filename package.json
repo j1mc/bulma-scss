@@ -1,6 +1,6 @@
 {
   "name": "bulma-scss",
-  "version": "0.7.4",
+  "version": "0.7.4-1",
   "description": "The Bulma CSS Framework files converted to SCSS syntax",
   "main": "bulma.scss",
   "scripts": {
