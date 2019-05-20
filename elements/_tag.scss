@@ -38,22 +38,6 @@ $tag-delete-margin: 1px !default;
     }
   }
 
-  &.has-addons {
-    .tag {
-      margin-right: 0;
-
-      &:not(:first-child) {
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0;
-      }
-
-      &:not(:last-child) {
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0;
-      }
-    }
-  }
-
   &.is-centered {
     justify-content: center;
 

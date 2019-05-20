@@ -92,5 +92,8 @@ table {
 td,
 th {
   padding: 0;
-  text-align: left;
+
+  &:not([align]) {
+    text-align: left;
+  }
 }

@@ -1,3 +1,5 @@
+$level-item-spacing: $block-spacing / 2 !default;
+
 .level {
   @extend %block;
 
@@ -29,7 +31,7 @@
     .level-item {
       &:not(:last-child) {
         margin-bottom: 0;
-        margin-right: 0.75rem;
+        margin-right: $level-item-spacing;
       }
 
       &:not(.is-narrow) {
@@ -66,7 +68,7 @@
   // Responsiveness
   @include mobile {
     &:not(:last-child) {
-      margin-bottom: 0.75rem;
+      margin-bottom: $level-item-spacing;
     }
   }
 }
@@ -86,7 +88,7 @@
     // Responsiveness
     @include tablet {
       &:not(:last-child) {
-        margin-right: 0.75rem;
+        margin-right: $level-item-spacing;
       }
     }
   }

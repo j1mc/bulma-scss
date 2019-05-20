@@ -191,7 +191,10 @@ $content-table-foot-cell-color: $text-strong !default;
 
     th {
       color: $content-table-cell-heading-color;
-      text-align: left;
+
+      &:not([align]) {
+        text-align: left;
+      }
     }
 
     thead {
@@ -219,6 +222,12 @@ $content-table-foot-cell-color: $text-strong !default;
           }
         }
       }
+    }
+  }
+
+  .tabs {
+    li + li {
+      margin-top: 0;
     }
   }
 

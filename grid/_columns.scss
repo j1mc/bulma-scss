@@ -97,7 +97,7 @@ $column-gap: 0.75rem !default;
     margin-left: 80%;
   }
 
-  @for $i from 1 through 12 {
+  @for $i from 0 through 12 {
     .columns.is-mobile > &.is-#{$i} {
       flex: none;
       width: percentage($i / 12);
@@ -199,7 +199,7 @@ $column-gap: 0.75rem !default;
       margin-left: 80%;
     }
 
-    @for $i from 1 through 12 {
+    @for $i from 0 through 12 {
       &.is-#{$i}-mobile {
         flex: none;
         width: percentage($i / 12);
@@ -323,7 +323,7 @@ $column-gap: 0.75rem !default;
       margin-left: 80%;
     }
 
-    @for $i from 1 through 12 {
+    @for $i from 0 through 12 {
       &.is-#{$i},
       &.is-#{$i}-tablet {
         flex: none;
@@ -429,7 +429,7 @@ $column-gap: 0.75rem !default;
       margin-left: 80%;
     }
 
-    @for $i from 1 through 12 {
+    @for $i from 0 through 12 {
       &.is-#{$i}-touch {
         flex: none;
         width: percentage($i / 12);
@@ -533,7 +533,7 @@ $column-gap: 0.75rem !default;
       margin-left: 80%;
     }
 
-    @for $i from 1 through 12 {
+    @for $i from 0 through 12 {
       &.is-#{$i}-desktop {
         flex: none;
         width: percentage($i / 12);
@@ -637,7 +637,7 @@ $column-gap: 0.75rem !default;
       margin-left: 80%;
     }
 
-    @for $i from 1 through 12 {
+    @for $i from 0 through 12 {
       &.is-#{$i}-widescreen {
         flex: none;
         width: percentage($i / 12);
@@ -741,7 +741,7 @@ $column-gap: 0.75rem !default;
       margin-left: 80%;
     }
 
-    @for $i from 1 through 12 {
+    @for $i from 0 through 12 {
       &.is-#{$i}-fullhd {
         flex: none;
         width: percentage($i / 12);

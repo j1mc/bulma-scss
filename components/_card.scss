@@ -4,13 +4,18 @@ $card-shadow: 0 2px 3px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1) !default;
 
 $card-header-background-color: transparent !default;
 $card-header-color: $text-strong !default;
+$card-header-padding: 0.75rem !default;
 $card-header-shadow: 0 1px 2px rgba($black, 0.1) !default;
 $card-header-weight: $weight-bold !default;
 
 $card-content-background-color: transparent !default;
+$card-content-padding: 1.5rem !default;
 
 $card-footer-background-color: transparent !default;
 $card-footer-border-top: 1px solid $border !default;
+$card-footer-padding: 0.75rem !default;
+
+$card-media-margin: $block-spacing !default;
 
 .card {
   background-color: $card-background-color;
@@ -33,7 +38,7 @@ $card-footer-border-top: 1px solid $border !default;
   display: flex;
   flex-grow: 1;
   font-weight: $card-header-weight;
-  padding: 0.75rem;
+  padding: $card-header-padding;
 
   &.is-centered {
     justify-content: center;
@@ -45,7 +50,7 @@ $card-footer-border-top: 1px solid $border !default;
   cursor: pointer;
   display: flex;
   justify-content: center;
-  padding: 0.75rem;
+  padding: $card-header-padding;
 }
 
 .card-image {
@@ -55,7 +60,7 @@ $card-footer-border-top: 1px solid $border !default;
 
 .card-content {
   background-color: $card-content-background-color;
-  padding: 1.5rem;
+  padding: $card-content-padding;
 }
 
 .card-footer {
@@ -72,7 +77,7 @@ $card-footer-border-top: 1px solid $border !default;
   flex-grow: 1;
   flex-shrink: 0;
   justify-content: center;
-  padding: 0.75rem;
+  padding: $card-footer-padding;
 
   &:not(:last-child) {
     border-right: $card-footer-border-top;
@@ -83,6 +88,6 @@ $card-footer-border-top: 1px solid $border !default;
 
 .card {
   .media:not(:last-child) {
-    margin-bottom: 0.75rem;
+    margin-bottom: $card-media-margin;
   }
 }

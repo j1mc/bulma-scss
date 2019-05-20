@@ -75,6 +75,7 @@ $navbar-breakpoint: $desktop !default;
 
         & > a.navbar-item,
         .navbar-link {
+          &:focus,
           &:hover,
           &.is-active {
             background-color: darken($color, 5%);
@@ -103,6 +104,7 @@ $navbar-breakpoint: $desktop !default;
 
           & > a.navbar-item,
           .navbar-link {
+            &:focus,
             &:hover,
             &.is-active {
               background-color: darken($color, 5%);
@@ -117,6 +119,7 @@ $navbar-breakpoint: $desktop !default;
           }
         }
 
+        .navbar-item.has-dropdown:focus .navbar-link,
         .navbar-item.has-dropdown:hover .navbar-link,
         .navbar-item.has-dropdown.is-active .navbar-link {
           background-color: darken($color, 5%);
@@ -185,6 +188,7 @@ body {
 
 .navbar-brand {
   a.navbar-item {
+    &:focus,
     &:hover {
       background-color: transparent;
     }
@@ -231,6 +235,8 @@ a.navbar-item,
 .navbar-link {
   cursor: pointer;
 
+  &:focus,
+  &:focus-within,
   &:hover,
   &.is-active {
     background-color: $navbar-item-hover-background-color;
@@ -261,6 +267,7 @@ a.navbar-item,
     min-height: $navbar-height;
     padding-bottom: calc(0.5rem - 1px);
 
+    &:focus,
     &:hover {
       background-color: $navbar-tab-hover-background-color;
       border-bottom-color: $navbar-tab-hover-border-bottom-color;
@@ -414,6 +421,7 @@ a.navbar-item,
     &.is-transparent {
       a.navbar-item,
       .navbar-link {
+        &:focus,
         &:hover,
         &.is-active {
           background-color: transparent !important;
@@ -422,6 +430,8 @@ a.navbar-item,
 
       .navbar-item.has-dropdown {
         &.is-active,
+        &.is-hoverable:focus,
+        &.is-hoverable:focus-within,
         &.is-hoverable:hover {
           .navbar-link {
             background-color: transparent !important;
@@ -431,6 +441,7 @@ a.navbar-item,
 
       .navbar-dropdown {
         a.navbar-item {
+          &:focus,
           &:hover {
             background-color: $navbar-dropdown-item-hover-background-color;
             color: $navbar-dropdown-item-hover-color;
@@ -478,6 +489,8 @@ a.navbar-item,
     }
 
     &.is-active,
+    &.is-hoverable:focus,
+    &.is-hoverable:focus-within,
     &.is-hoverable:hover {
       .navbar-dropdown {
         display: block;
@@ -529,6 +542,7 @@ a.navbar-item,
     a.navbar-item {
       padding-right: 3rem;
 
+      &:focus,
       &:hover {
         background-color: $navbar-dropdown-item-hover-background-color;
         color: $navbar-dropdown-item-hover-color;
@@ -621,12 +635,13 @@ a.navbar-item,
       color: $navbar-item-active-color;
     }
 
-    &.is-active:not(:hover) {
+    &.is-active:not(:focus):not(:hover) {
       background-color: $navbar-item-active-background-color;
     }
   }
 
   .navbar-item.has-dropdown {
+    &:focus,
     &:hover,
     &.is-active {
       .navbar-link {
