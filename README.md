@@ -11,7 +11,7 @@ with later releases. The files are converted to SCSS with
 
 Install with Yarn
 ```
-yarn add https://github.com/j1mc/bulma-scss
+yarn add bulma-scss
 ```
 
 Install with npm
