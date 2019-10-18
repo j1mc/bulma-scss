@@ -14,6 +14,10 @@ $dimensions: 16 24 32 48 64 96 128 !default;
     }
   }
 
+  &.is-fullwidth {
+    width: 100%;
+  }
+
   // Ratio
   &.is-square,
   &.is-1by1,

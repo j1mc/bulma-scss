@@ -241,7 +241,7 @@
 
   -moz-appearance: none;
   -webkit-appearance: none;
-  background-color: rgba($black, 0.2);
+  background-color: rgba($scheme-invert, 0.2);
   border: none;
   border-radius: $radius-rounded;
   cursor: pointer;
@@ -262,7 +262,7 @@
 
   &::before,
   &::after {
-    background-color: $white;
+    background-color: $scheme-main;
     content: "";
     display: block;
     left: 50%;
@@ -284,11 +284,11 @@
 
   &:hover,
   &:focus {
-    background-color: rgba($black, 0.3);
+    background-color: rgba($scheme-invert, 0.3);
   }
 
   &:active {
-    background-color: rgba($black, 0.4);
+    background-color: rgba($scheme-invert, 0.4);
   }
 
   // Sizes
