@@ -1,3 +1,5 @@
+$media-border-color: rgba($border, 0.5) !default;
+
 .media {
   align-items: flex-start;
   display: flex;
@@ -8,7 +10,7 @@
   }
 
   .media {
-    border-top: 1px solid rgba($border, 0.5);
+    border-top: 1px solid $media-border-color;
     display: flex;
     padding-top: 0.75rem;
 
@@ -27,7 +29,7 @@
   }
 
   & + .media {
-    border-top: 1px solid rgba($border, 0.5);
+    border-top: 1px solid $media-border-color;
     margin-top: 1rem;
     padding-top: 1rem;
   }

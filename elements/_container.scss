@@ -6,14 +6,15 @@ $container-offset: 2 * $gap !default;
   position: relative;
   width: auto;
 
+  &.is-fluid {
+    max-width: none;
+    padding-left: $gap;
+    padding-right: $gap;
+    width: 100%;
+  }
+
   @include desktop {
     max-width: $desktop - $container-offset;
-
-    &.is-fluid {
-      margin-left: $gap;
-      margin-right: $gap;
-      max-width: none;
-    }
   }
 
 
