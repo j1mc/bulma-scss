@@ -82,6 +82,10 @@
 }
 
 @function colorLuminance($color) {
+  @if type-of($color) != "color" {
+    @return 0.55;
+  }
+
   $color-rgb: ("red": red($color), "green": green($color), "blue": blue($color));
 
   @each $name, $value in $color-rgb {
@@ -136,4 +140,20 @@
   }
 
   @return $text-strong;
+}
+
+@function bulmaRgba($color, $alpha) {
+  @if type-of($color) != "color" {
+    @return $color;
+  }
+
+  @return rgba($color, $alpha);
+}
+
+@function bulmaDarken($color, $amount) {
+  @if type-of($color) != "color" {
+    @return $color;
+  }
+
+  @return darken($color, $amount);
 }
