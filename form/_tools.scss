@@ -55,7 +55,7 @@ $help-size: $size-small !default;
 
     .control {
       &:not(:last-child) {
-        margin-right: -1px;
+        @include ltr-property("margin", -1px);
       }
 
       &:not(:first-child):not(:last-child) {
@@ -70,8 +70,16 @@ $help-size: $size-small !default;
         .button,
         .input,
         .select select {
-          border-bottom-right-radius: 0;
-          border-top-right-radius: 0;
+          @include ltr {
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+          }
+
+
+          @include rtl {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+          }
         }
       }
 
@@ -79,8 +87,16 @@ $help-size: $size-small !default;
         .button,
         .input,
         .select select {
-          border-bottom-left-radius: 0;
-          border-top-left-radius: 0;
+          @include ltr {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+          }
+
+
+          @include rtl {
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+          }
         }
       }
 
@@ -137,7 +153,8 @@ $help-size: $size-small !default;
 
       &:not(:last-child) {
         margin-bottom: 0;
-        margin-right: 0.75rem;
+
+        @include ltr-property("margin", 0.75rem);
       }
 
       &.is-expanded {
@@ -195,7 +212,9 @@ $help-size: $size-small !default;
     flex-basis: 0;
     flex-grow: 1;
     flex-shrink: 0;
-    margin-right: 1.5rem;
+
+    @include ltr-property("margin", 1.5rem);
+
     text-align: right;
 
     &.is-small {
@@ -242,7 +261,7 @@ $help-size: $size-small !default;
       }
 
       &:not(:last-child) {
-        margin-right: 0.75rem;
+        @include ltr-property("margin", 0.75rem);
       }
     }
   }
@@ -253,7 +272,7 @@ $help-size: $size-small !default;
   clear: both;
   font-size: $size-normal;
   position: relative;
-  text-align: left;
+  text-align: inherit;
 
   // Modifiers
   &.has-icons-left,
@@ -317,7 +336,9 @@ $help-size: $size-small !default;
       @extend %loader;
 
       position: absolute !important;
-      right: 0.625em;
+
+      @include ltr-position(0.625em);
+
       top: 0.625em;
       z-index: 4;
     }

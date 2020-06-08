@@ -93,13 +93,17 @@ $content-table-foot-cell-color: $text-strong !default;
 
   blockquote {
     background-color: $content-blockquote-background-color;
-    border-left: $content-blockquote-border-left;
+
+    @include ltr-property("border", $content-blockquote-border-left, false);
+
     padding: $content-blockquote-padding;
   }
 
   ol {
     list-style-position: outside;
-    margin-left: 2em;
+
+    @include ltr-property("margin", 2em, false);
+
     margin-top: 1em;
 
     &:not([type]) {
@@ -125,7 +129,9 @@ $content-table-foot-cell-color: $text-strong !default;
 
   ul {
     list-style: disc outside;
-    margin-left: 2em;
+
+    @include ltr-property("margin", 2em, false);
+
     margin-top: 1em;
 
     ul {
@@ -139,7 +145,7 @@ $content-table-foot-cell-color: $text-strong !default;
   }
 
   dd {
-    margin-left: 2em;
+    @include ltr-property("margin", 2em, false);
   }
 
   figure {
@@ -193,7 +199,7 @@ $content-table-foot-cell-color: $text-strong !default;
       color: $content-table-cell-heading-color;
 
       &:not([align]) {
-        text-align: left;
+        text-align: inherit;
       }
     }
 

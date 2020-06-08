@@ -13,7 +13,9 @@
       @extend %arrow;
 
       border-color: $input-arrow;
-      right: 1.125em;
+
+      @include ltr-position(1.125em);
+
       z-index: 4;
     }
   }
@@ -21,7 +23,8 @@
   &.is-rounded {
     select {
       border-radius: $radius-rounded;
-      padding-left: 1em;
+
+      @include ltr-property("padding", 1em, false);
     }
   }
 
@@ -44,7 +47,7 @@
     }
 
     &:not([multiple]) {
-      padding-right: 2.5em;
+      @include ltr-property("padding", 2.5em);
     }
 
     &[multiple] {
@@ -125,7 +128,9 @@
 
       margin-top: 0;
       position: absolute;
-      right: 0.625em;
+
+      @include ltr-position(0.625em);
+
       top: 0.625em;
       transform: none;
     }

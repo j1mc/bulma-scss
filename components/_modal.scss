@@ -73,7 +73,9 @@ $modal-card-body-padding: 20px !default;
   background: none;
   height: $modal-close-dimensions;
   position: fixed;
-  right: $modal-close-right;
+
+  @include ltr-position($modal-close-right);
+
   top: $modal-close-top;
   width: $modal-close-dimensions;
 }
@@ -118,7 +120,7 @@ $modal-card-body-padding: 20px !default;
 
   .button {
     &:not(:last-child) {
-      margin-right: 0.5em;
+      @include ltr-property("margin", 0.5em);
     }
   }
 }

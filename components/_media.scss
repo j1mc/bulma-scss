@@ -1,9 +1,11 @@
 $media-border-color: bulmaRgba($border, 0.5) !default;
+$media-spacing: 1rem;
+$media-spacing-large: 1.5rem;
 
 .media {
   align-items: flex-start;
   display: flex;
-  text-align: left;
+  text-align: inherit;
 
   .content:not(:last-child) {
     margin-bottom: 0.75rem;
@@ -30,15 +32,15 @@ $media-border-color: bulmaRgba($border, 0.5) !default;
 
   & + .media {
     border-top: 1px solid $media-border-color;
-    margin-top: 1rem;
-    padding-top: 1rem;
+    margin-top: $media-spacing;
+    padding-top: $media-spacing;
   }
 
   // Sizes
   &.is-large {
     & + .media {
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
+      margin-top: $media-spacing-large;
+      padding-top: $media-spacing-large;
     }
   }
 }
@@ -51,18 +53,18 @@ $media-border-color: bulmaRgba($border, 0.5) !default;
 }
 
 .media-left {
-  margin-right: 1rem;
+  @include ltr-property("margin", $media-spacing);
 }
 
 .media-right {
-  margin-left: 1rem;
+  @include ltr-property("margin", $media-spacing, false);
 }
 
 .media-content {
   flex-basis: auto;
   flex-grow: 1;
   flex-shrink: 1;
-  text-align: left;
+  text-align: inherit;
 }
 
 @include mobile {

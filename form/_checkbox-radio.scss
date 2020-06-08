@@ -27,6 +27,6 @@
   @extend %checkbox-radio;
 
   & + .radio {
-    margin-left: 0.5em;
+    @include ltr-property("margin", 0.5em, false);
   }
 }

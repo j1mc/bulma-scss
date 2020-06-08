@@ -113,7 +113,7 @@ $panel-colors: $colors !default;
   padding: 0.5em 0.75em;
 
   input[type="checkbox"] {
-    margin-right: 0.75em;
+    @include ltr-property("margin", 0.75em);
   }
 
   & > .control {
@@ -154,7 +154,8 @@ label.panel-block {
   @include fa(14px, 1em);
 
   color: $panel-icon-color;
-  margin-right: 0.75em;
+
+  @include ltr-property("margin", 0.75em);
 
   .fa {
     font-size: inherit;

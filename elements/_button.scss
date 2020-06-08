@@ -88,13 +88,13 @@ $button-static-border-color: $border !default;
     }
 
     &:first-child:not(:last-child) {
-      margin-left: calc(#{-1 / 2 * $button-padding-horizontal} - #{$button-border-width});
-      margin-right: $button-padding-horizontal / 4;
+      @include ltr-property("margin", calc(#{-1 / 2 * $button-padding-horizontal} - #{$button-border-width}), false);
+      @include ltr-property("margin", $button-padding-horizontal / 4);
     }
 
     &:last-child:not(:first-child) {
-      margin-left: $button-padding-horizontal / 4;
-      margin-right: calc(#{-1 / 2 * $button-padding-horizontal} - #{$button-border-width});
+      @include ltr-property("margin", $button-padding-horizontal / 4, false);
+      @include ltr-property("margin", calc(#{-1 / 2 * $button-padding-horizontal} - #{$button-border-width}));
     }
 
     &:first-child:last-child {
@@ -386,7 +386,7 @@ $button-static-border-color: $border !default;
     margin-bottom: 0.5rem;
 
     &:not(:last-child):not(.is-fullwidth) {
-      margin-right: 0.5rem;
+      @include ltr-property("margin", 0.5rem);
     }
   }
 
@@ -427,11 +427,12 @@ $button-static-border-color: $border !default;
       &:not(:last-child) {
         border-bottom-right-radius: 0;
         border-top-right-radius: 0;
-        margin-right: -1px;
+
+        @include ltr-property("margin", -1px);
       }
 
       &:last-child {
-        margin-right: 0;
+        @include ltr-property("margin", 0);
       }
 
       &:hover,

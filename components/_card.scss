@@ -80,7 +80,7 @@ $card-media-margin: $block-spacing !default;
   padding: $card-footer-padding;
 
   &:not(:last-child) {
-    border-right: $card-footer-border-top;
+    @include ltr-property("border", $card-footer-border-top);
   }
 }
 

@@ -207,8 +207,7 @@ body {
   color: $navbar-burger-color;
 
   @include hamburger($navbar-height);
-
-  margin-left: auto;
+  @include ltr-property("margin", auto, false);
 }
 
 .navbar-menu {
@@ -289,14 +288,15 @@ a.navbar-item,
 }
 
 .navbar-link:not(.is-arrowless) {
-  padding-right: 2.5em;
+  @include ltr-property("padding", 2.5em);
 
   &::after {
     @extend %arrow;
 
     border-color: $navbar-dropdown-arrow;
     margin-top: -0.375em;
-    right: 1.125em;
+
+    @include ltr-position(1.125em);
   }
 }
 
@@ -509,12 +509,14 @@ a.navbar-item,
 
   .navbar-start {
     justify-content: flex-start;
-    margin-right: auto;
+
+    @include ltr-property("margin", auto);
   }
 
   .navbar-end {
     justify-content: flex-end;
-    margin-left: auto;
+
+    @include ltr-property("margin", auto, false);
   }
 
   .navbar-dropdown {
@@ -525,7 +527,9 @@ a.navbar-item,
     box-shadow: 0 8px 8px bulmaRgba($scheme-invert, 0.1);
     display: none;
     font-size: 0.875rem;
-    left: 0;
+
+    @include ltr-position(0, false);
+
     min-width: 100%;
     position: absolute;
     top: 100%;
@@ -537,7 +541,7 @@ a.navbar-item,
     }
 
     a.navbar-item {
-      padding-right: 3rem;
+      @include ltr-property("padding", 3rem);
 
       &:focus,
       &:hover {
@@ -578,11 +582,11 @@ a.navbar-item,
   .navbar > .container,
   .container > .navbar {
     .navbar-brand {
-      margin-left: -0.75rem;
+      @include ltr-property("margin", -0.75rem, false);
     }
 
     .navbar-menu {
-      margin-right: -0.75rem;
+      @include ltr-property("margin", -0.75rem);
     }
   }
 

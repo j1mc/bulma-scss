@@ -160,7 +160,7 @@ table {
     vertical-align: top;
 
     &:not([align]) {
-      text-align: left;
+      text-align: inherit;
     }
   }
 

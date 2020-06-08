@@ -56,9 +56,11 @@ $menu-label-spacing: 1em !default;
 
   li {
     ul {
-      border-left: $menu-list-border-left;
+      @include ltr-property("border", $menu-list-border-left, false);
+
       margin: $menu-nested-list-margin;
-      padding-left: $menu-nested-list-padding-left;
+
+      @include ltr-property("padding", $menu-nested-list-padding-left, false);
     }
   }
 }

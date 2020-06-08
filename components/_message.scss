@@ -104,7 +104,8 @@ $message-colors: $colors !default;
   .delete {
     flex-grow: 0;
     flex-shrink: 0;
-    margin-left: 0.75em;
+
+    @include ltr-property("margin", 0.75em, false);
   }
 
   & + .message-body {

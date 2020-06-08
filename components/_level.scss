@@ -31,7 +31,8 @@ $level-item-spacing: $block-spacing / 2 !default;
     .level-item {
       &:not(:last-child) {
         margin-bottom: 0;
-        margin-right: $level-item-spacing;
+
+        @include ltr-property("margin", $level-item-spacing);
       }
 
       &:not(.is-narrow) {
@@ -88,7 +89,7 @@ $level-item-spacing: $block-spacing / 2 !default;
     // Responsiveness
     @include tablet {
       &:not(:last-child) {
-        margin-right: $level-item-spacing;
+        @include ltr-property("margin", $level-item-spacing);
       }
     }
   }

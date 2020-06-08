@@ -32,7 +32,7 @@ $breadcrumb-item-separator-color: $border-hover !default;
     display: flex;
 
     &:first-child a {
-      padding-left: 0;
+      @include ltr-property("padding", 0, false);
     }
 
     &.is-active {
@@ -59,11 +59,11 @@ $breadcrumb-item-separator-color: $border-hover !default;
 
   .icon {
     &:first-child {
-      margin-right: 0.5em;
+      @include ltr-property("margin", 0.5em);
     }
 
     &:last-child {
-      margin-left: 0.5em;
+      @include ltr-property("margin", 0.5em, false);
     }
   }
 

@@ -215,7 +215,7 @@ $hero-body-padding-large: 18rem 1.5rem !default;
     justify-content: center;
 
     .button:not(:last-child) {
-      margin-right: 1.5rem;
+      @include ltr-property("margin", 1.5rem);
     }
   }
 }
