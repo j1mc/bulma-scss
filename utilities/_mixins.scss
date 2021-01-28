@@ -1,4 +1,4 @@
-@import "initial-variables";
+@import "derived-variables";
 
 @mixin clearfix {
   &::after {
@@ -237,10 +237,6 @@
   user-select: none;
 }
 
-%unselectable {
-  @include unselectable;
-}
-
 @mixin arrow($color: transparent) {
   border: 3px solid $color;
   border-radius: 2px;
@@ -258,22 +254,14 @@
   width: 0.625em;
 }
 
-%arrow {
-  @include arrow;
-}
-
 @mixin block($spacing: $block-spacing) {
   &:not(:last-child) {
     margin-bottom: $spacing;
   }
 }
 
-%block {
-  @include block;
-}
-
 @mixin delete {
-  @extend %unselectable;
+  @include unselectable;
 
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -356,10 +344,6 @@
   }
 }
 
-%delete {
-  @include delete;
-}
-
 @mixin loader {
   animation: spinAround 500ms infinite linear;
   border: 2px solid $grey-lighter;
@@ -373,18 +357,10 @@
   width: 1em;
 }
 
-%loader {
-  @include loader;
-}
-
 @mixin overlay($offset: 0) {
   bottom: $offset;
   left: $offset;
   position: absolute;
   right: $offset;
   top: $offset;
-}
-
-%overlay {
-  @include overlay;
 }
