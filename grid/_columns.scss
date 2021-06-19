@@ -103,11 +103,11 @@ $column-gap: 0.75rem !default;
   @for $i from 0 through 12 {
     .columns.is-mobile > &.is-#{$i} {
       flex: none;
-      width: percentage($i / 12);
+      width: percentage(divide($i, 12));
     }
 
     .columns.is-mobile > &.is-offset-#{$i} {
-      @include ltr-property("margin", percentage($i / 12), false);
+      @include ltr-property("margin", percentage(divide($i, 12)), false);
     }
   }
 
@@ -206,11 +206,11 @@ $column-gap: 0.75rem !default;
     @for $i from 0 through 12 {
       &.is-#{$i}-mobile {
         flex: none;
-        width: percentage($i / 12);
+        width: percentage(divide($i, 12));
       }
 
       &.is-offset-#{$i}-mobile {
-        @include ltr-property("margin", percentage($i / 12), false);
+        @include ltr-property("margin", percentage(divide($i, 12)), false);
       }
     }
   }
@@ -332,12 +332,12 @@ $column-gap: 0.75rem !default;
       &.is-#{$i},
       &.is-#{$i}-tablet {
         flex: none;
-        width: percentage($i / 12);
+        width: percentage(divide($i, 12));
       }
 
       &.is-offset-#{$i},
       &.is-offset-#{$i}-tablet {
-        @include ltr-property("margin", percentage($i / 12), false);
+        @include ltr-property("margin", percentage(divide($i, 12)), false);
       }
     }
   }
@@ -438,11 +438,11 @@ $column-gap: 0.75rem !default;
     @for $i from 0 through 12 {
       &.is-#{$i}-touch {
         flex: none;
-        width: percentage($i / 12);
+        width: percentage(divide($i, 12));
       }
 
       &.is-offset-#{$i}-touch {
-        @include ltr-property("margin", percentage($i / 12), false);
+        @include ltr-property("margin", percentage(divide($i, 12)), false);
       }
     }
   }
@@ -543,11 +543,11 @@ $column-gap: 0.75rem !default;
     @for $i from 0 through 12 {
       &.is-#{$i}-desktop {
         flex: none;
-        width: percentage($i / 12);
+        width: percentage(divide($i, 12));
       }
 
       &.is-offset-#{$i}-desktop {
-        @include ltr-property("margin", percentage($i / 12), false);
+        @include ltr-property("margin", percentage(divide($i, 12)), false);
       }
     }
   }
@@ -648,11 +648,11 @@ $column-gap: 0.75rem !default;
     @for $i from 0 through 12 {
       &.is-#{$i}-widescreen {
         flex: none;
-        width: percentage($i / 12);
+        width: percentage(divide($i, 12));
       }
 
       &.is-offset-#{$i}-widescreen {
-        @include ltr-property("margin", percentage($i / 12), false);
+        @include ltr-property("margin", percentage(divide($i, 12)), false);
       }
     }
   }
@@ -753,11 +753,11 @@ $column-gap: 0.75rem !default;
     @for $i from 0 through 12 {
       &.is-#{$i}-fullhd {
         flex: none;
-        width: percentage($i / 12);
+        width: percentage(divide($i, 12));
       }
 
       &.is-offset-#{$i}-fullhd {
-        @include ltr-property("margin", percentage($i / 12), false);
+        @include ltr-property("margin", percentage(divide($i, 12)), false);
       }
     }
   }

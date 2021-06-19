@@ -41,11 +41,25 @@ $icon-text-spacing: 0.25em !default;
     flex-shrink: 0;
 
     &:not(:last-child) {
-      margin-right: $icon-text-spacing;
+      @include ltr {
+        margin-right: $icon-text-spacing;
+      }
+
+
+      @include rtl {
+        margin-left: $icon-text-spacing;
+      }
     }
 
     &:not(:first-child) {
-      margin-left: $icon-text-spacing;
+      @include ltr {
+        margin-left: $icon-text-spacing;
+      }
+
+
+      @include rtl {
+        margin-right: $icon-text-spacing;
+      }
     }
   }
 }

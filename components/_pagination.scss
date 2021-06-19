@@ -177,6 +177,14 @@ $pagination-shadow-inset: inset 0 1px 2px rgba($scheme-invert, 0.2) !default;
     order: 1;
   }
 
+  .pagination-previous,
+  .pagination-next,
+  .pagination-link,
+  .pagination-ellipsis {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
   .pagination-previous {
     order: 2;
   }
@@ -187,6 +195,8 @@ $pagination-shadow-inset: inset 0 1px 2px rgba($scheme-invert, 0.2) !default;
 
   .pagination {
     justify-content: space-between;
+    margin-bottom: 0;
+    margin-top: 0;
 
     &.is-centered {
       .pagination-previous {
