@@ -27,3 +27,7 @@
 %overlay {
   @include overlay;
 }
+
+%reset {
+  @include reset;
+}

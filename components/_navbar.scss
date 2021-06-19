@@ -208,6 +208,8 @@ body {
 }
 
 .navbar-burger {
+  @extend %reset;
+
   color: $navbar-burger-color;
 
   @include hamburger($navbar-height);

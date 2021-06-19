@@ -67,6 +67,10 @@ $file-colors: $form-colors !default;
     font-size: $size-small;
   }
 
+  &.is-normal {
+    font-size: $size-normal;
+  }
+
   &.is-medium {
     font-size: $size-medium;
 

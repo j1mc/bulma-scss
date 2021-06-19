@@ -130,6 +130,10 @@ $alignments: ("centered": "center", "justified": "justify", "left": "left", "rig
   font-style: italic !important;
 }
 
+.is-underlined {
+  text-decoration: underline !important;
+}
+
 .has-text-weight-light {
   font-weight: $weight-light !important;
 }
