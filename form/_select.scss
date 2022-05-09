@@ -112,7 +112,8 @@ $select-colors: $form-colors !default;
   // Modifiers
   &.is-disabled {
     &::after {
-      border-color: $input-disabled-color;
+      border-color: $input-disabled-color !important;
+      opacity: 0.5;
     }
   }
 
