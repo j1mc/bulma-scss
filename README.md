@@ -1,11 +1,11 @@
 # bulma-scss
 
-This is a port of the [Bulma](https://bulma.io/) project SASS files to the
-SCSS syntax.
+This is a port of the [Bulma](https://bulma.io/) project SASS files to the SCSS syntax.
 
-Currently, these files are based on Bulma version 0.9.4, and will be updated
-with later releases. The files are converted to SCSS with
-[this script](https://gist.github.com/j1mc/ff1ff83e277b1e221761fc0c0ee3b164).
+These files are based on Bulma versions up through Bulma 0.9.4. With the release of Bulma 1.0,
+Bulma changed to supporting SCSS natively, thus eliminating the need for this project.
+
+These files will remain available for anyone who needs them, but the project is now archived. 
 
 ## Installation
 
@@ -32,4 +32,3 @@ We use this project's [Github issue tracker](https://github.com/j1mc/bulma-scss/
 ## License
 
 The project is licensed under the MIT license.
-
